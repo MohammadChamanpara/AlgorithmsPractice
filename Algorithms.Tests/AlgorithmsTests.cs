@@ -9,14 +9,14 @@ namespace Algorithms.Tests
         [TestMethod]
         [DataRow("", true)]
         [DataRow("A", true)]
-        [DataRow("AA", true)]
         [DataRow("ABA", true)]
-        [DataRow("ABBA", true)]
         [DataRow("ABCBA", true)]
         [DataRow("AB", false)]
         [DataRow("ABC", false)]
         [DataRow("ABCA", false)]
-        [DataRow("ABBA-", false)]
+        [DataRow("ABBA-", true)]
+        [DataRow("A....B;CB--A@@-", true)]
+        [DataRow(";1;A$.;.2.B33C33B2A1", true)]
         public void Palindrom_WhenStringProvided_ShouldVerifyCorrectly(string input, bool expected)
         {
             //Act
@@ -25,5 +25,6 @@ namespace Algorithms.Tests
             //Assert
             output.Should().Be(expected);
         }
+        
     }
 }
