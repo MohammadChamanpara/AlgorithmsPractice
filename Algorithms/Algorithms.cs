@@ -1,6 +1,6 @@
-﻿namespace MicrosoftInterviewPractice
+﻿namespace Algorithms
 {
-    internal static class Algorithms
+    public static class Algorithm
     {
         public static bool IsPalindrome(string s)
         {

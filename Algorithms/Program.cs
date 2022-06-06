@@ -1,3 +1,4 @@
-﻿using MicrosoftInterviewPractice;
+﻿using Algorithms;
+using System;
 
-Console.WriteLine(Algorithms.IsPalindrome("a"));
+Console.WriteLine(Algorithm.IsPalindrome("a"));
