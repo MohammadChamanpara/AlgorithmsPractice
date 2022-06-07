@@ -1,4 +1,3 @@
-﻿using Algorithms;
-using System;
+﻿using System;
 
-Console.WriteLine(Algorithm.IsPalindrome("a"));
+Console.WriteLine("Unit Tests run and test the algorithms. Nothing here!");
