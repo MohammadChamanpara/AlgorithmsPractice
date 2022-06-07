@@ -1,22 +1,21 @@
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Algorithms.Tests
 {
-    [TestClass]
     public class AlgorithmsTests
     {
-        [TestMethod]
-        [DataRow("", true)]
-        [DataRow("A", true)]
-        [DataRow("ABA", true)]
-        [DataRow("ABCBA", true)]
-        [DataRow("AB", false)]
-        [DataRow("ABC", false)]
-        [DataRow("ABCA", false)]
-        [DataRow("ABBA-", true)]
-        [DataRow("A....B;CB--A@@-", true)]
-        [DataRow(";1;A$.;.2.B33C33B2A1", true)]
+        [Theory]
+        [InlineData("", true)]
+        [InlineData("A", true)]
+        [InlineData("ABA", true)]
+        [InlineData("ABCBA", true)]
+        [InlineData("AB", false)]
+        [InlineData("ABC", false)]
+        [InlineData("ABCA", false)]
+        [InlineData("ABBA-", true)]
+        [InlineData("A....B;CB--A@@-", true)]
+        [InlineData(";1;A$.;.2.B33C33B2A1", true)]
         public void Palindrom_WhenStringProvided_ShouldVerifyCorrectly(string input, bool expected)
         {
             //Act
@@ -25,6 +24,19 @@ namespace Algorithms.Tests
             //Assert
             output.Should().Be(expected);
         }
-        
+
+        [Theory]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5 })]
+        [InlineData(new[] { 10, 2, 3, 4, 5 }, new[] { 4, 5, 10 })]
+        [InlineData(new[] { 1, 2 }, new[] { 1, 2 })]
+        [InlineData(new int[] { }, new int[] { })]
+        public void KLargets(int[] numbers, int[] expectedLargest)
+        {
+            //Act
+            var largest = Algorithm.ThreeLargest(numbers);
+
+            //Assert
+            largest.Should().BeEquivalentTo(expectedLargest);
+        }
     }
 }
