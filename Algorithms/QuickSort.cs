@@ -22,7 +22,7 @@
         {
             int pivot = numbers[to];
 
-            int pivotPosition = -1;
+            int pivotPosition = from-1;
             for (int runner = from; runner < to; runner++)
                 if (numbers[runner] < pivot)
                     Swap(numbers, runner, ++pivotPosition);
