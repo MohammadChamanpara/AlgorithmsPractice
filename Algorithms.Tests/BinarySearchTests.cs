@@ -14,10 +14,10 @@ namespace Algorithms.Tests
         public void Test(int[] numbers, int number, bool expectedResult)
         {
             //Act
-            var resutlt = BinarySearch.Run(numbers, number);
+            var result = BinarySearch.Run(numbers, number);
 
             //Assert
-            resutlt.Should().Be(expectedResult);
+            result.Should().Be(expectedResult);
         }
     }
 }

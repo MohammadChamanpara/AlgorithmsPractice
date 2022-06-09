@@ -14,10 +14,10 @@ namespace Algorithms.Tests
         public void Test(int[] numbers, int number, bool expectedResult)
         {
             //Act
-            var resutlt = SumTwoExists.Run(numbers, number);
+            var result = SumTwoExists.Run(numbers, number);
 
             //Assert
-            resutlt.Should().Be(expectedResult);
+            result.Should().Be(expectedResult);
         }
     }
 }
