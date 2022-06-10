@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
     public class Node
     {
@@ -13,11 +11,11 @@ namespace Algorithms
         public int Value;
     }
 
-    public class DigitLinkedList
+    public class LinkedListDigit
     {
         private Node? _head;
 
-        public DigitLinkedList(int number = 0)
+        public LinkedListDigit(int number = 0)
         {
             while (number > 0)
             {
@@ -40,9 +38,9 @@ namespace Algorithms
             runner.Next = new Node(digit);
         }
 
-        public static DigitLinkedList operator +(DigitLinkedList a, DigitLinkedList b)
+        public static LinkedListDigit operator +(LinkedListDigit a, LinkedListDigit b)
         {
-            DigitLinkedList result = new();
+            LinkedListDigit result = new();
 
             var aRunner = a._head;
             var bRunner = b._head;

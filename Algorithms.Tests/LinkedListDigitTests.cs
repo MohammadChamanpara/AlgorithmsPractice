@@ -3,11 +3,11 @@ using Xunit;
 
 namespace Algorithms.Tests
 {
-    public class LinkedListAddTests
+    public class LinkedListDigitTests
     {
         [Theory]
         [MemberData(nameof(TestData))]
-        public void Test(DigitLinkedList a, DigitLinkedList b, DigitLinkedList sum)
+        public void Test(LinkedListDigit a, LinkedListDigit b, LinkedListDigit sum)
         {
             //Act
             var result = a + b;
@@ -20,17 +20,17 @@ namespace Algorithms.Tests
         {
             new object[]
             {
-                new DigitLinkedList(123), new DigitLinkedList(456), new DigitLinkedList(579)
+                new LinkedListDigit(123), new LinkedListDigit(456), new LinkedListDigit(579)
             },
 
             new object[]
             {
-                new DigitLinkedList(19), new DigitLinkedList(9), new DigitLinkedList(28)
+                new LinkedListDigit(19), new LinkedListDigit(9), new LinkedListDigit(28)
             },
 
             new object[]
             {
-                new DigitLinkedList(99999), new DigitLinkedList(1), new DigitLinkedList(100000)
+                new LinkedListDigit(99999), new LinkedListDigit(1), new LinkedListDigit(100000)
             },
 
         };
