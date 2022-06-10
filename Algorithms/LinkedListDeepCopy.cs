@@ -97,7 +97,6 @@ namespace Algorithms
                 s.Append($"{runner} -> ");
                 runner = runner.Next;
             }
-            s.Append("X");
             return s.ToString();
         }
 
