@@ -1,3 +1,5 @@
 # Overview
 
-This project is just a playground for me to practice algorithms and data structure implementations.
+This a practice project for me to enhance my algorithm and data structure skills.
+Each implementation is verified using a set of unit tests.
+
