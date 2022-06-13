@@ -13,7 +13,7 @@ namespace Algorithms.Tests
             (int row, int col) = PeopleMatrix.Run(matrix);
 
             //Assert
-            expectedMeetingPoint.Should().Be((row, col));
+            (row, col).Should().Be(expectedMeetingPoint);
         }
 
         public static object[] TestData => new object[]
