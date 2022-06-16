@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Algorithms.Tests
 {
-    public class StringAlgorithmsTests
+    public class PalindromeTests
     {
         [Theory]
         [InlineData("", true)]
@@ -20,24 +20,10 @@ namespace Algorithms.Tests
         public void TestPalindrom(string input, bool expected)
         {
             //Act
-            var output = StringAlgorithms.IsPalindrome(input);
+            var output = Palindrome.IsPalindrome(input);
 
             //Assert
             output.Should().Be(expected);
-        }
-
-        [Theory]
-        [InlineData("", "")]
-        [InlineData("one two", "two one")]
-        [InlineData("this is tale", "tale is this")]
-        [InlineData("1 2 3 4", "4 3 2 1")]
-        public void TestReverse(string sentence, string expectedReverse)
-        {
-            //Act
-            var reversed = StringAlgorithms.ReverseWords(sentence);
-
-            //Assert
-            reversed.Should().Be(expectedReverse);
         }
 
         [Theory]
@@ -45,12 +31,12 @@ namespace Algorithms.Tests
         public void TestAllPalindroms(string str, IEnumerable<string> expectedPalindromes)
         {
             //Act
-            var palindromes = StringAlgorithms.GetAllPalindromes(str);
+            var palindromes = Palindrome.GetAllPalindromes(str);
 
             //Assert
             palindromes.Should().BeEquivalentTo(expectedPalindromes);
         }
-        
+
         public static object[] TestDataAllPalindromes => new object[]
         {
             new object[] { "", new string[] { } },

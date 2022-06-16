@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 
 namespace Algorithms
 {
-    public static class StringAlgorithms
+    public static class Palindrome
     {
         public static bool IsPalindrome(string s)
         {
@@ -22,19 +20,6 @@ namespace Algorithms
             return true;
         }
         public static bool IsValid(this char c) => char.IsLetterOrDigit(c);
-
-        public static string ReverseWords(string sentence)
-        {
-            if (string.IsNullOrEmpty(sentence))
-                return sentence;
-
-            var words = sentence.Split(' ');
-
-            for (int i = 0, j = words.Length - 1; i < words.Length / 2; i++, j--)
-                (words[i], words[j]) = (words[j], words[i]);
-
-            return string.Join(" ", words);
-        }
 
         public static object GetAllPalindromes(string str)
         {
