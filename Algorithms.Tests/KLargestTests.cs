@@ -6,10 +6,11 @@ namespace Algorithms.Tests
     public class KLargestTests
     {
         [Theory]
+        [InlineData(new int[] { }, new int[] { })]
+        [InlineData(new[] { 1, 2 }, new[] { 1, 2 })]
+        [InlineData(new[] { 1, 2, 3 }, new[] { 1, 2, 3 })]
         [InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5 })]
         [InlineData(new[] { 10, 2, 3, 4, 5 }, new[] { 4, 5, 10 })]
-        [InlineData(new[] { 1, 2 }, new[] { 1, 2 })]
-        [InlineData(new int[] { }, new int[] { })]
         public void ThreeLargets(int[] numbers, int[] expectedLargest)
         {
             //Act
