@@ -19,21 +19,27 @@
          */
         public static int Run(int number)
         {
+            int sign = 1;
+            if (number < 0)
+            {
+                number = -number;
+                sign = -1;
+            }
             int result = 0;
             int power = 1;
-            while(number > 0)
+            while (number > 0)
             {
-                int digit= number % 10;
+                int digit = number % 10;
                 number /= 10;
-                
+
                 if (digit == 5)
-                    return number * power + result;
+                    return sign * (number * power + result);
 
                 result = digit * power + result;
 
                 power *= 10;
             }
-            return result;
+            return sign * result;
         }
     }
 }
