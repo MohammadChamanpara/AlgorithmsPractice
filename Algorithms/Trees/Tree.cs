@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Algorithms
@@ -21,7 +20,7 @@ namespace Algorithms
     {
         private TreeNode? _root;
 
-        public static object Generate1to7()
+        public static Tree Generate1to7()
         {
             var tree = new Tree();
 
