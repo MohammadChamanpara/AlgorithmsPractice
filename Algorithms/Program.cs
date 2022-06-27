@@ -1,2 +1,2 @@
 ﻿
-System.Console.WriteLine("Unit Tests run and test the algorithms. Nothing here!");
+System.Console.WriteLine("Run the algorithms via unit tests.");
