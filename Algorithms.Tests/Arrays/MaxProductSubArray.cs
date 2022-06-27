@@ -4,7 +4,7 @@ namespace Algorithms.Tests.Arrays
 {
     public static class MaxProductSubArray
     {
-        public static int Run(int[] numbers)
+        public static int Run(int[] numbers) //O(n)
         {
             int minSoFar = numbers[0];
             int maxSoFar = numbers[0];
