@@ -1,5 +1,4 @@
-﻿using Algorithms.Integers;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests.Integers

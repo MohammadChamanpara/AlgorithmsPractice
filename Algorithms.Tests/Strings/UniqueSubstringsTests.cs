@@ -1,5 +1,4 @@
-﻿using Algorithms.Strings;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests.Strings

@@ -1,4 +1,3 @@
-using Algorithms.Trees;
 using FluentAssertions;
 using Xunit;
 

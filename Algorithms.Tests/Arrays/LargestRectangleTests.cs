@@ -1,5 +1,4 @@
-﻿using Algorithms.Arrays;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests.Arrays

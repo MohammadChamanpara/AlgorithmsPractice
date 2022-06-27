@@ -1,4 +1,3 @@
-using Algorithms.Arrays;
 using FluentAssertions;
 using Xunit;
 

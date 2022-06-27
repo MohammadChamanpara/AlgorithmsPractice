@@ -1,5 +1,4 @@
-﻿using Algorithms.Graphs;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests.Graphs
