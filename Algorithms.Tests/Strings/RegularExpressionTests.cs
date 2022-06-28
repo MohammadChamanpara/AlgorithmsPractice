@@ -29,7 +29,29 @@ namespace Algorithms.Tests.Strings
         public void Test(string text, string pattern, bool expectedMatch)
         {
             //Act
-            var match = RegularExpression.Run(text, pattern);
+            var match = RegularExpression1.Run(text, pattern);
+
+            //Assert
+            match.Should().Be(expectedMatch);
+        }
+
+
+        [Theory]
+        [InlineData("a", "a", true)]
+        [InlineData("ab", "*", true)]
+        [InlineData("aa", "a", false)]
+        [InlineData("ab", "ab", true)]
+        [InlineData("ab", "a*", true)]
+        [InlineData("ab", "?*", true)]
+        [InlineData("ab", "??", true)]
+        [InlineData("abcdef", "*", true)]
+        [InlineData("abcdef", "abc*def", true)]
+        [InlineData("abcdef", "abc?def", false)]
+        [InlineData("bacb", "b**c*?*", true)]
+        public void Test2(string text, string pattern, bool expectedMatch)
+        {
+            //Act
+            bool match = RegularExpression2.Run(text, pattern);
 
             //Assert
             match.Should().Be(expectedMatch);
