@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algorithms.Tests.Integers
+namespace Algorithms.Tests.Bits
 {
     public static class BinaryGap
     {

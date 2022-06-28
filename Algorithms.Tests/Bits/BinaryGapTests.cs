@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace Algorithms.Tests.Integers
+namespace Algorithms.Tests.Bits
 {
     public class BinaryGapTests
     {
