@@ -39,15 +39,20 @@ namespace Algorithms.Tests.Strings
         [Theory]
         [InlineData("a", "a", true)]
         [InlineData("ab", "*", true)]
-        [InlineData("aa", "a", false)]
         [InlineData("ab", "ab", true)]
         [InlineData("ab", "a*", true)]
         [InlineData("ab", "?*", true)]
         [InlineData("ab", "??", true)]
         [InlineData("abcdef", "*", true)]
-        [InlineData("abcdef", "abc*def", true)]
-        [InlineData("abcdef", "abc?def", false)]
         [InlineData("bacb", "b**c*?*", true)]
+        [InlineData("abcdef", "abc*def", true)]
+        [InlineData("abcdef", "**a**b**c**d**e**f**", true)]
+
+        [InlineData("aa", "a", false)]
+        [InlineData("abcdef", "abc?def", false)]
+        [InlineData("abcdef", "a?bc?def", false)]
+        [InlineData("cacab", "**bcbbac?ba", false)]
+        [InlineData("abcdef", "**a**b**c**d**e**f**?", false)]
         public void Test2(string text, string pattern, bool expectedMatch)
         {
             //Act

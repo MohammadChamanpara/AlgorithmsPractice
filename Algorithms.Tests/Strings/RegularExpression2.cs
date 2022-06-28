@@ -5,24 +5,42 @@
         /* -------- Algorithm 2: '*' matches any number of any characters -------- */
         internal static bool Run(string text, string pattern)
         {
-            return Run(text, 0, pattern, 0);
+            var visited = new bool[text.Length + 1, pattern.Length + 1];
+            return Run(text, 0, pattern, 0, visited);
         }
 
-        private static bool Run(string text, int textIndex, string pattern, int patternIndex)
+        private static bool Run
+        (
+            string text,
+            int textIndex,
+            string pattern,
+            int patternIndex,
+            bool[,] visited
+        )
         {
+
+
             if (patternIndex == pattern.Length && textIndex == text.Length)
                 return true;
+
+            if (visited[textIndex, patternIndex])
+                return false;
 
             if (OnAStar(pattern, patternIndex))
             {
                 for (int i = textIndex; i <= text.Length; i++)
-                    if (Run(text, i, pattern, patternIndex + 1))
+                    if (Run(text, i, pattern, patternIndex + 1, visited))
                         return true;
+
+                visited[textIndex, patternIndex] = true;
+
                 return false;
             }
 
             if (Match(text, textIndex, pattern, patternIndex))
-                return Run(text, textIndex + 1, pattern, patternIndex + 1);
+                return Run(text, textIndex + 1, pattern, patternIndex + 1, visited);
+
+            visited[textIndex, patternIndex] = true;
 
             return false;
         }
