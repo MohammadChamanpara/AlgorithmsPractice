@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Algorithms.Tests.Strings
+namespace Algorithms.Tests.Bits
 {
     public static class ConcatenateUnique
     {

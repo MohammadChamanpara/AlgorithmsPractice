@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace Algorithms.Tests.Strings
+namespace Algorithms.Tests.Bits
 {
     public class ConcatenateUniqueTests
     {
