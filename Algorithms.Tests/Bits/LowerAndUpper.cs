@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algorithms.Tests.Strings
+namespace Algorithms.Tests.Bits
 {
     public static class LowerAndUpper
     {
