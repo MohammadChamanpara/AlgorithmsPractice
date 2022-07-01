@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Algorithms.Tests.Arrays
+namespace Algorithms.Tests.Sort
 {
     public static class LargestWordInDictionary
     {
