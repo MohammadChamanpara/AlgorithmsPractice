@@ -13,7 +13,7 @@ namespace Algorithms.Tests.Matrix
             int[,] matrix = MatrixGenerateSpiral.Run(number);
 
             //Assert
-            matrix.Should().BeEquivalentTo(expectedMatrix);
+            matrix.Should().BeEquivalentTo(expectedMatrix, options => options.WithStrictOrdering());
         }
 
         public static object[] TestData => new object[]

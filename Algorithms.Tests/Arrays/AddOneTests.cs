@@ -20,7 +20,7 @@ namespace Algorithms.Tests.Arrays
             int[] result = AddOne.Run(array);
 
             //Assert
-            result.Should().BeEquivalentTo(expectedResult);
+            result.Should().BeEquivalentTo(expectedResult,options => options.WithStrictOrdering());
         }
     }
 }

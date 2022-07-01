@@ -17,7 +17,7 @@ namespace Algorithms.Tests.Trees
             var largest = KLargest.ThreeLargest(numbers);
 
             //Assert
-            largest.Should().BeEquivalentTo(expectedLargest);
+            largest.Should().BeEquivalentTo(expectedLargest, options => options.WithStrictOrdering());
         }
 
         [Theory]

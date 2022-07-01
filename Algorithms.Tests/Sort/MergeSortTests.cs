@@ -18,7 +18,7 @@ namespace Algorithms.Tests.Sort
             MergeSort.Sort(numbers);
 
             //Assert
-            numbers.Should().BeEquivalentTo(sorted);
+            numbers.Should().BeEquivalentTo(sorted, options => options.WithStrictOrdering());
         }
     }
 }

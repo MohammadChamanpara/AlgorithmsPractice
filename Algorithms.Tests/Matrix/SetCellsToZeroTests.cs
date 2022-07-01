@@ -13,7 +13,7 @@ namespace Algorithms.Tests.Matrix
             SetCellsToZero.Run(matrix);
 
             //Assert
-            matrix.Should().BeEquivalentTo(expectedResult);
+            matrix.Should().BeEquivalentTo(expectedResult, options => options.WithStrictOrdering());
         }
 
         public static object[] TestData => new object[]
