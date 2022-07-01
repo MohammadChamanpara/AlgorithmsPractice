@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Algorithms.Tests.Arrays;
+using System.Collections.Generic;
 
-namespace Algorithms.Tests.Arrays
+namespace Algorithms.Tests.Sort
 {
     public static class SumTwoExists
     {
