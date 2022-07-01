@@ -16,7 +16,7 @@ namespace Algorithms.Tests.Sort
             var largest = LargestWordInDictionary.Run(dictionary, word);
 
             //Assert
-            largest.Should().BeEquivalentTo(expectedLargest);
+            largest.Should().Be(expectedLargest);
         }
     }
 }

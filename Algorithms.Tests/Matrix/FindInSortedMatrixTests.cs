@@ -13,7 +13,7 @@ namespace Algorithms.Tests.Matrix
             (int row, int col) = FindInSortedMatrix.Run(matrix, key);
 
             //Assert
-            (row, col).Should().BeEquivalentTo(expectedPosition);
+            (row, col).Should().Be(expectedPosition);
         }
 
         public static object[] TestData => new object[]
