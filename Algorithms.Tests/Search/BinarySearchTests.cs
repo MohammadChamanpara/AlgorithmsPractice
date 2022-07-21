@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace Algorithms.Tests.Arrays
+namespace Algorithms.Tests.Search
 {
     public class BinarySearchTests
     {

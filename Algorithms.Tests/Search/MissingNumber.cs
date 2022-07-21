@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Algorithms.Tests.Arrays
+namespace Algorithms.Tests.Search
 {
     public static class MissingNumber
     {

@@ -1,4 +1,4 @@
-﻿namespace Algorithms.Tests.Arrays
+﻿namespace Algorithms.Tests.Search
 {
     internal class FirstMissingInteger
     {

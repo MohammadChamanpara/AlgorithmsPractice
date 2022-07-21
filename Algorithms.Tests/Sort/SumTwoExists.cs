@@ -1,4 +1,4 @@
-﻿using Algorithms.Tests.Arrays;
+﻿using Algorithms.Tests.Search;
 using System.Collections.Generic;
 
 namespace Algorithms.Tests.Sort

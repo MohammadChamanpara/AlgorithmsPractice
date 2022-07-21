@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Algorithms.Tests.Arrays
+namespace Algorithms.Tests.Search
 {
     public class LargestDistance
     {
