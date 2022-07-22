@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AtlassianTests
+namespace Algorithms.Tests.ATL.Limiter
 {
     internal class Limiter
     {
@@ -12,7 +12,7 @@ namespace AtlassianTests
         public Limiter(int timeFrame, int reguestLimit)
         {
             this.timeFrame = timeFrame;
-            this.requestLimit = reguestLimit;
+            requestLimit = reguestLimit;
         }
 
         internal bool limit(int customerId)

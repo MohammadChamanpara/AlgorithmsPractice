@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using System.Threading;
 
-namespace AtlassianTests
+namespace Algorithms.Tests.ATL.Limiter
 {
     public class LimiterTests
     {
@@ -16,7 +16,7 @@ namespace AtlassianTests
             int customerId = 1;
 
             //Act
-            bool served=rateLimiter.limit(customerId);
+            bool served = rateLimiter.limit(customerId);
 
             //Assert
             served.Should().Be(true);
@@ -54,8 +54,8 @@ namespace AtlassianTests
             int customerId = 1;
 
             //Act
-            bool firstTime=rateLimiter.limit(customerId);
-            bool secondTime= rateLimiter.limit(customerId);
+            bool firstTime = rateLimiter.limit(customerId);
+            bool secondTime = rateLimiter.limit(customerId);
             Thread.Sleep(1100);
             bool thirdTime = rateLimiter.limit(customerId);
 
