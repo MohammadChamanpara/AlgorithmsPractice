@@ -5,23 +5,23 @@ namespace Algorithms.Tests.ATL.Limiter
 {
     internal class Limiter
     {
-        private readonly int timeFrame;
+        private readonly int timeFrameInMilliseconds;
         private readonly int requestLimit;
         private readonly Dictionary<int, Queue<DateTime>> recentRequests = new();
 
-        public Limiter(int timeFrame, int reguestLimit)
+        public Limiter(int timeFrameInMilliseconds, int reguestLimit)
         {
-            this.timeFrame = timeFrame;
+            this.timeFrameInMilliseconds = timeFrameInMilliseconds;
             requestLimit = reguestLimit;
         }
 
-        internal bool limit(int customerId)
+        internal bool Limit(int customerId)
         {
-            if (LimitExceeded(customerId, recentRequests, timeFrame, requestLimit))
+            if (LimitExceeded(customerId, recentRequests, requestLimit))
                 return false;
 
             //remove excess
-            RemoveExpiredRequests(customerId, recentRequests, timeFrame);
+            RemoveExpiredRequests(customerId, recentRequests, timeFrameInMilliseconds);
 
             //add to recent requests
             StoreRequest(customerId, recentRequests);
@@ -29,7 +29,7 @@ namespace Algorithms.Tests.ATL.Limiter
             return true;
         }
 
-        private void StoreRequest(int customerId, Dictionary<int, Queue<DateTime>> recentRequests)
+        private static void StoreRequest(int customerId, Dictionary<int, Queue<DateTime>> recentRequests)
         {
 
             if (!recentRequests.ContainsKey(customerId))
@@ -49,7 +49,12 @@ namespace Algorithms.Tests.ATL.Limiter
                 userRequests.Dequeue();
         }
 
-        private bool LimitExceeded(int customerId, Dictionary<int, Queue<DateTime>> recentRequests, int timeFrame, int requestLimit)
+        private bool LimitExceeded
+        (
+            int customerId,
+            Dictionary<int, Queue<DateTime>> recentRequests,
+            int requestLimit
+        )
         {
             if (requestLimit == 0)
                 return true;
@@ -72,8 +77,8 @@ namespace Algorithms.Tests.ATL.Limiter
 
         private bool IsExpired(DateTime oldestRequestTime)
         {
-            var ellapsedSeconds = (DateTime.Now - oldestRequestTime).TotalSeconds;
-            if (ellapsedSeconds >= timeFrame)
+            var ellapsedSeconds = (DateTime.Now - oldestRequestTime).TotalMilliseconds;
+            if (ellapsedSeconds >= timeFrameInMilliseconds)
                 return true;
 
             return false;

@@ -16,7 +16,7 @@ namespace Algorithms.Tests.ATL.Limiter
             int customerId = 1;
 
             //Act
-            bool served = rateLimiter.limit(customerId);
+            bool served = rateLimiter.Limit(customerId);
 
             //Assert
             served.Should().Be(true);
@@ -32,32 +32,32 @@ namespace Algorithms.Tests.ATL.Limiter
             int customerId = 1;
 
             //Act
-            rateLimiter.limit(customerId);
-            rateLimiter.limit(customerId);
-            rateLimiter.limit(customerId);
-            rateLimiter.limit(customerId);
-            rateLimiter.limit(customerId);
-            rateLimiter.limit(customerId);
-            bool served = rateLimiter.limit(customerId);
+            rateLimiter.Limit(customerId);
+            rateLimiter.Limit(customerId);
+            rateLimiter.Limit(customerId);
+            rateLimiter.Limit(customerId);
+            rateLimiter.Limit(customerId);
+            rateLimiter.Limit(customerId);
+            bool served = rateLimiter.Limit(customerId);
 
             //Assert
             served.Should().Be(false);
         }
 
         [Fact]
-        public void RateLimit_WhenRequestIsExpireed_ShouldReturnTrue()
+        public void RateLimit_WhenRequestIsExpired_ShouldReturnTrue()
         {
             //Arrange
-            int timeFrame = 1;
+            int timeFrame = 100;
             int reguestLimit = 1;
             var rateLimiter = new Limiter(timeFrame, reguestLimit);
             int customerId = 1;
 
             //Act
-            bool firstTime = rateLimiter.limit(customerId);
-            bool secondTime = rateLimiter.limit(customerId);
-            Thread.Sleep(1100);
-            bool thirdTime = rateLimiter.limit(customerId);
+            bool firstTime = rateLimiter.Limit(customerId);
+            bool secondTime = rateLimiter.Limit(customerId);
+            Thread.Sleep(101);
+            bool thirdTime = rateLimiter.Limit(customerId);
 
 
             //Assert
